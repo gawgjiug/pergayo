@@ -1,0 +1,495 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3f51b5;
+    overflow: hidden;
+}
+
+.image {
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(15deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.image1 {
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    animation: move1 10s linear infinite;
+}
+
+.image2 {
+    top: 50px;
+    right: 100px;
+    width: 150px;
+    animation: move2 12s linear infinite;
+}
+
+.image3 {
+    bottom: 50px;
+    left: 50px;
+    width: 120px;
+    animation: move3 14s linear infinite;
+}
+
+.image4 {
+    bottom: 70px;
+    right: 200px;
+    width: 100px;
+    animation: move4 16s linear infinite;
+}
+
+.image5 {
+    top: 200px;
+    left: 250px;
+    width: 90px;
+    animation: move5 18s linear infinite;
+}
+
+.image6 {
+    top: 70px;
+    left: 300px;
+    width: 100px;
+    animation: move6 20s linear infinite;
+}
+
+.image7 {
+    top: 250px;
+    right: 50px;
+    width: 150px;
+    animation: move7 22s linear infinite;
+}
+
+.image8 {
+    bottom: 150px;
+    left: 20px;
+    width: 120px;
+    animation: move8 24s linear infinite;
+}
+
+.image9 {
+    bottom: 20px;
+    right: 100px;
+    width: 100px;
+    animation: move9 26s linear infinite;
+}
+
+.image10 {
+    top: 400px;
+    left: 50px;
+    width: 90px;
+    animation: move10 28s linear infinite;
+}
+
+.image12 {
+    bottom: 90px;
+    left: 250px;
+    width: 90px;
+    animation: move11 30s linear infinite;
+}
+
+/* Define the keyframes for each image movement */
+@keyframes move1 {
+    0% { top: 20px; left: 20px; }
+    50% { top: 100px; left: 80px; }
+    100% { top: 20px; left: 20px; }
+}
+
+@keyframes move2 {
+    0% { top: 50px; right: 100px; }
+    50% { top: 150px; right: 50px; }
+    100% { top: 50px; right: 100px; }
+}
+
+@keyframes move3 {
+    0% { bottom: 50px; left: 50px; }
+    50% { bottom: 150px; left: 100px; }
+    100% { bottom: 50px; left: 50px; }
+}
+
+@keyframes move4 {
+    0% { bottom: 70px; right: 200px; }
+    50% { bottom: 170px; right: 150px; }
+    100% { bottom: 70px; right: 200px; }
+}
+
+@keyframes move5 {
+    0% { top: 200px; left: 250px; }
+    50% { top: 300px; left: 300px; }
+    100% { top: 200px; left: 250px; }
+}
+
+@keyframes move6 {
+    0% { top: 70px; left: 300px; }
+    50% { top: 170px; left: 250px; }
+    100% { top: 70px; left: 300px; }
+}
+
+@keyframes move7 {
+    0% { top: 250px; right: 50px; }
+    50% { top: 350px; right: 0px; }
+    100% { top: 250px; right: 50px; }
+}
+
+@keyframes move8 {
+    0% { bottom: 150px; left: 20px; }
+    50% { bottom: 250px; left: 70px; }
+    100% { bottom: 150px; left: 20px; }
+}
+
+@keyframes move9 {
+    0% { bottom: 20px; right: 100px; }
+    50% { bottom: 120px; right: 50px; }
+    100% { bottom: 20px; right: 100px; }
+}
+
+@keyframes move10 {
+    0% { top: 400px; left: 50px; }
+    50% { top: 500px; left: 100px; }
+    100% { top: 400px; left: 50px; }
+}
+
+@keyframes move12 {
+    0% { bottom: 90px; left: 250px; }
+    50% { bottom: 190px; left: 300px; }
+    100% { bottom: 90px; left: 250px; }
+}
+
+
+/* 게임 컨테이너 스타일 */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+/* 음악 재생 애니메이션 스타일 */
+.music-animation {
+    display: flex;
+    justify-content: space-between;
+    width: 150px; /* Adjusted width to be 3 times longer */
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.bar {
+    background-color: #fff;
+    width: 10px;
+    height: 100%;
+    animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+    0% {
+        opacity: .35;
+        height: 3px;
+    }
+    100% {
+        opacity: 1;
+        height: 28px;
+    }
+}
+
+.bar:nth-child(1) { animation-duration: 474ms; }
+.bar:nth-child(2) { animation-duration: 433ms; }
+.bar:nth-child(3) { animation-duration: 407ms; }
+.bar:nth-child(4) { animation-duration: 458ms; }
+
+/* 결과 표시 영역 스타일 */
+/* @import rule to include the 'Asap' font if it's not already included */
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap');
+
+/* Result Display Styling */
+.result-display {
+    margin-top: 20px;
+    font-size: 20px; /* 글자 크기 조정 */
+    font-weight: bold;
+    color: #f28d8d; /* 연한 빨간색 */
+    text-align: center;
+    background: #e0f7fa; /* 거의 흰색에 가까운 하늘색 */
+    padding: 20px;
+    border-radius: 15px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-family: 'Asap', sans-serif; /* 폰트 패밀리 적용 */
+    position: relative;
+}
+
+.result-display::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 20px; /* 테두리 둥글게 */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+}
+
+.result-display:hover {
+    transform: scale(1.05); /* 호버 시 확대 */
+    background: #b2ebf2; /* 호버 시 배경 변화 */
+}
+
+/* 애니메이션 효과 추가 */
+@keyframes resultFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-display {
+    animation: resultFadeIn 0.6s ease-out; /* 결과 표시 애니메이션 */
+}
+
+/* 버튼 스타일링 */
+.result-button {
+    background-color: #ff9a9a; /* 버튼 배경색 */
+    color: #fff; /* 버튼 텍스트 색상 */
+    border: none; /* 테두리 없음 */
+    border-radius: 50%; /* 둥글게 처리 */
+    padding: 5px 10px; /* 여백 조정 */
+    font-size: 14px; /* 글자 크기 조정 */
+    font-family: 'Asap', sans-serif; /* 폰트 패밀리 적용 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 호버 효과 */
+    margin-top: 15px; /* 버튼과 텍스트 사이 여백 */
+}
+
+.result-button:hover {
+    background-color: #ff6f6f; /* 호버 시 배경색 변화 */
+    transform: scale(1.1); /* 호버 시 확대 효과 */
+}
+
+.result-button:focus {
+    outline: none; /* 포커스 아웃라인 제거 */
+    box-shadow: 0 0 0 3px rgba(255, 127, 127, 0.5); /* 포커스 시 외부 테두리 */
+}
+
+
+
+/* Simplified input container styles */
+.input__answer {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 3px;
+    border-radius: 1.7rem;
+    overflow: hidden;
+    margin: 2em 1em;
+    z-index: 1;
+    background: transparent;
+}
+
+/* Input field styles */
+.input {
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    padding: 1.2rem 1rem 1.2rem 3rem; /* Increased left padding for emoji */
+    font-size: 1.1rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    color: #ff7f7f;
+    box-shadow: 0 0.4rem #dfd9d9, inset 0 0 0 transparent;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 2;
+}
+
+/* Placeholder text styling */
+.input::placeholder {
+    color: #a0c0e8; /* Lighter blue for placeholder */
+    transition: all 0.3s ease;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+/* Input focus styles */
+.input:focus {
+    outline: none;
+    border-color: #4a90e2; /* Changed to blue */
+    box-shadow: 0 0.6rem #dfd9d9, 0 0 15px rgba(74, 144, 226, 0.7); /* Blue glow */
+    transform: translateY(-3px) scale(1.01);
+}
+
+/* Emoji styles */
+.input__answer::after {
+    content: "😎";
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+/* Emoji animations */
+@keyframes dance {
+    0%, 100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-50%) rotate(-20deg) scale(1.1);
+    }
+    75% {
+        transform: translateY(-50%) rotate(20deg) scale(1.1);
+    }
+}
+
+.input__answer:hover::after {
+    animation: dance 0.5s ease infinite;
+}
+
+.input__answer:focus-within::after {
+    content: "😂";
+    animation: dance 0.3s ease infinite;
+}
+
+/* Psychedelic background effect */
+.input__answer::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        #4a90e2,
+        #6aa9e9,
+        #8bc1f0,
+        #add9f7,
+        #d0f0ff,
+        #add9f7,
+        #8bc1f0,
+        #6aa9e9,
+        #4a90e2
+    );
+    animation: rotate 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.input__answer:hover::before,
+.input__answer:focus-within::before {
+    opacity: 1;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Shockwave effect on focus */
+@keyframes shockwave {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 127, 127, 0.4);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 20px rgba(255, 127, 127, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 127, 127, 0);
+    }
+}
+
+.input__answer:focus-within {
+    animation: shockwave 0.5s ease-out;
+}
+
+/* Floating label effect */
+.input__answer {
+    --label-size: 0.8rem;
+    --label-transform: translateY(-170%) scale(0.8);
+}
+
+.input__answer input:placeholder-shown + label {
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+.input__answer label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: var(--label-transform);
+    font-size: var(--label-size);
+    color: #ff7f7f;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.input__answer input:not(:placeholder-shown) + label,
+.input__answer input:focus + label {
+    transform: var(--label-transform);
+    font-size: var(--label-size);
+}
+
+
+/* Container styles for the play button */
+.container {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 50%;
+    margin-bottom: 2em; /* Margin between play button and input field */
+}
+
+/* Play button styles */
+
+@keyframes reveal {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 35%;
+    }
+}
+
+
+.logo {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 2%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5%;
+}
+
+/*  */

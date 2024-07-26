@@ -1,0 +1,260 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3f51b5;
+    overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@700&display=swap');
+
+h1 {
+  font-family: 'Asap', sans-serif;
+  font-size: 3rem; /* 폰트 크기 줄이기 */
+  text-align: center;
+  color: #ffffff; /* 텍스트 색상 */
+  margin: 2rem 0; /* 테이블과의 간격 조정 */
+  padding: 0.5em 1em; /* 내부 여백 조정 */
+  position: relative;
+  overflow: hidden;
+  background: rgba(128, 128, 128, 0.6); /* 회색 반투명 배경 */
+  border-radius: 8px; /* 둥근 모서리 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 텍스트 그림자 */
+  z-index: 1; /* 가상 요소보다 위에 있도록 설정 */
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 0, 128, 0.3), rgba(255, 204, 0, 0.3));
+  z-index: -1;
+  animation: pulsate 2s infinite;
+  border-radius: 8px; /* 둥근 모서리와 일치 */
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 70%);
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.table-container {
+    width: 80%; /* 테이블 너비 조정 */
+    max-width: 800px; /* 테이블 최대 너비 조정 */
+    margin: 0 auto;
+    text-align: center; /* 테이블 내용 중앙 정렬 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Cairo', sans-serif;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+table td, table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #333;
+    color: #fff;
+}
+
+table img {
+    width: 90px;
+    height: 90px;
+    border-radius: 20%;
+    margin: 10px;
+}
+
+/* 1등 스타일 - 우주 테마 */
+.table-rank1 {
+    background: linear-gradient(45deg, #000033, #0000FF, #000033);
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 0 0 20px #00FFFF, 0 0 30px #0000FF, 0 0 40px #FFFFFF;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to bottom right, #FF00FF, #00FFFF, #FFFF00);
+    border-image-slice: 1;
+    animation: cosmic-glow 3s infinite alternate;
+}
+
+/* 2등 스타일 - 하늘/구름 테마 */
+.table-rank2 {
+    background: linear-gradient(45deg, #87CEEB, #E6E6FA, #87CEEB);
+    color: #4169E1;
+    font-weight: bold;
+    box-shadow: 0 0 15px #87CEEB;
+    border: 2px solid #00BFFF;
+    animation: sky-glow 3s infinite alternate;
+}
+
+/* 1등과 2등의 행 전체에 적용할 스타일 */
+.table-rank1, .table-rank2 {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 1등 스타일 애니메이션 */
+@keyframes cosmic-glow {
+    0% {
+        box-shadow: 0 0 20px #00FFFF, 0 0 30px #0000FF, 0 0 40px #FFFFFF;
+    }
+    100% {
+        box-shadow: 0 0 25px #FF00FF, 0 0 35px #FFFF00, 0 0 45px #00FFFF;
+    }
+}
+
+/* 2등 스타일 애니메이션 */
+@keyframes sky-glow {
+    0% {
+        box-shadow: 0 0 15px #87CEEB;
+    }
+    100% {
+        box-shadow: 0 0 20px #00BFFF, 0 0 30px #E6E6FA;
+    }
+}
+
+/* 나머지 유저 스타일 */
+.table-rank-other {
+    background-color: #eee;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+}
+
+.background-images img {
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(15deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.image1 { top: 20px; left: 20px; width: 100px; animation: move1 10s linear infinite; }
+.image2 { top: 50px; right: 100px; width: 150px; animation: move2 12s linear infinite; }
+.image3 { bottom: 50px; left: 50px; width: 120px; animation: move3 14s linear infinite; }
+.image4 { bottom: 70px; right: 200px; width: 100px; animation: move4 16s linear infinite; }
+.image5 { top: 200px; left: 250px; width: 90px; animation: move5 18s linear infinite; }
+.image6 { top: 70px; left: 300px; width: 100px; animation: move6 20s linear infinite; }
+.image7 { top: 250px; right: 50px; width: 150px; animation: move7 22s linear infinite; }
+.image8 { bottom: 150px; left: 20px; width: 120px; animation: move8 24s linear infinite; }
+.image9 { bottom: 20px; right: 100px; width: 100px; animation: move9 26s linear infinite; }
+.image10 { top: 400px; left: 50px; width: 90px; animation: move10 28s linear infinite; }
+.image12 { bottom: 90px; left: 250px; width: 90px; animation: move11 30s linear infinite; }
+
+/* Define the keyframes for each image movement */
+@keyframes move1 {
+    0% { top: 20px; left: 20px; }
+    50% { top: 100px; left: 80px; }
+    100% { top: 20px; left: 20px; }
+}
+
+@keyframes move2 {
+    0% { top: 50px; right: 100px; }
+    50% { top: 150px; right: 50px; }
+    100% { top: 50px; right: 100px; }
+}
+
+@keyframes move3 {
+    0% { bottom: 50px; left: 50px; }
+    50% { bottom: 150px; left: 100px; }
+    100% { bottom: 50px; left: 50px; }
+}
+
+@keyframes move4 {
+    0% { bottom: 70px; right: 200px; }
+    50% { bottom: 170px; right: 150px; }
+    100% { bottom: 70px; right: 200px; }
+}
+
+@keyframes move5 {
+    0% { top: 200px; left: 250px; }
+    50% { top: 300px; left: 300px; }
+    100% { top: 200px; left: 250px; }
+}
+
+@keyframes move6 {
+    0% { top: 70px; left: 300px; }
+    50% { top: 170px; left: 250px; }
+    100% { top: 70px; left: 300px; }
+}
+
+@keyframes move7 {
+    0% { top: 250px; right: 50px; }
+    50% { top: 350px; right: 0px; }
+    100% { top: 250px; right: 50px; }
+}
+
+@keyframes move8 {
+    0% { bottom: 150px; left: 20px; }
+    50% { bottom: 250px; left: 70px; }
+    100% { bottom: 150px; left: 20px; }
+}
+
+@keyframes move9 {
+    0% { bottom: 20px; right: 100px; }
+    50% { bottom: 120px; right: 50px; }
+    100% { bottom: 20px; right: 100px; }
+}
+
+@keyframes move10 {
+    0% { top: 400px; left: 50px; }
+    50% { top: 500px; left: 100px; }
+    100% { top: 400px; left: 50px; }
+}
+
+@keyframes move12 {
+    0% { bottom: 90px; left: 250px; }
+    50% { bottom: 190px; left: 300px; }
+    100% { bottom: 90px; left: 250px; }
+}
